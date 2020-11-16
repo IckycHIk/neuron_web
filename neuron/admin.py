@@ -1,22 +1,15 @@
 from django.contrib import admin
-from .models import Todo, Category
+from .models import CheckText
+
 
 # Register your models here.
 
 
-class TodoAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'category', 'description', 'date', 'done')
-    list_display_links = ('id', 'title')
-    search_fields = ('id', 'title')
+class CheckTextAdmin(admin.ModelAdmin):
+    list_display = ('id', 'text', 'user_id', 'date', 'done', 'percent')
+    list_display_links = ('id', 'text')
+    search_fields = ('id', 'text')
     list_editable = ('done',)
-    list_filter = ('done', 'category')
 
 
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title')
-    list_display_links = ('title',)
-    search_fields = ('title',)
-
-
-admin.site.register(Todo, TodoAdmin)
-admin.site.register(Category, CategoryAdmin)
+admin.site.register(CheckText, CheckTextAdmin)

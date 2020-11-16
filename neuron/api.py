@@ -1,21 +1,14 @@
-from .models import Todo, Category
+from .models import CheckText
 from rest_framework import viewsets, permissions
-from .serializers import TodoSerializer, CategorySerializer
+from .serializers import CheckTextSerializer
 
 
-# Todo ViewSet
-class TodoViewSet(viewsets.ModelViewSet):
-    queryset = Todo.objects.all()
+# CheckText ViewSet
+class CheckTextViewSet(viewsets.ModelViewSet):
+    queryset = CheckText.objects.all()
     permission_classes = [
         permissions.AllowAny
     ]
-    serializer_class = TodoSerializer
+    serializer_class = CheckTextSerializer
 
 
-# Category ViewSet
-class CategoryViewSet(viewsets.ModelViewSet):
-    queryset = Category.objects.all()
-    permission_classes = [
-        permissions.AllowAny
-    ]
-    serializer_class = CategorySerializer

@@ -1,8 +1,8 @@
 from rest_framework import routers
-from .api import TodoViewSet, CategoryViewSet
+from .api import CheckTextViewSet
 
 router = routers.DefaultRouter()
-router.register('api/neuron', TodoViewSet, 'neuron')
-router.register('api/categories', CategoryViewSet, 'categories')
+router.register('api/neuron', CheckTextViewSet, 'neuron')
+
 
 urlpatterns = router.urls
