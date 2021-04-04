@@ -10,11 +10,19 @@ class CheckText(models.Model):
     user_id = models.CharField(max_length=400)
     date = models.DateTimeField(auto_now_add=True)
     done = models.BooleanField(default=False, null=False)
-    percent = models.IntegerField(
+    isBulling = models.BooleanField(default=False, null=False)
+    percent = models.FloatField(
         default=1,
         validators=[
-            MaxValueValidator(100),
-            MinValueValidator(1)
+            MaxValueValidator(1),
+            MinValueValidator(0)
         ])
 
 
+class TrainText(models.Model):
+    text = models.CharField(max_length=400)
+    isBulling = models.BooleanField(default=True, null=False)
+
+
+class MlModels(models.Model):
+    model = models.BinaryField()

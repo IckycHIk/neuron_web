@@ -1,0 +1,18 @@
+{% extends 'html/layout.html' %}
+
+{% block content %}
+<h3 class="center-align red lighten-3">{{title}}</h3>
+
+<ul class="collection">
+    {% for element in element %}
+        <li class="collection-item"><a href="/posts/details/{{element.id}}">{{element.text}}<br>
+
+        {% if element.isBulling %}
+            <a style="color: green">{{element.isBulling}}</a>
+           {% else%}
+             <a style="color: red">{{element.isBulling}}</a>
+            {% endif %}
+        </a></li>
+    {% endfor %}
+</ul>
+{% endblock %}
