@@ -1,3 +1,7 @@
 *.psd
 *.pdf
-*.csv
+test
+spec
+features
+doc
+public
