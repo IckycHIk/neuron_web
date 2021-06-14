@@ -76,7 +76,6 @@ sqlparse==0.4.1
 tflearn==0.5.0
 threadpoolctl==2.1.0
 tokenizers==0.9.4
-torch==1.7.1
 tornado==5.1.1
 tornado-cors==0.6.0
 tqdm==4.56.0
