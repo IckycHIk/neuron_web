@@ -1,1 +1,1 @@
-web: gunicorn neuron_web.wsgi --log-file -
+web: gunicorn neuron_server.wsgi --log-file -
