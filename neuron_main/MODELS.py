@@ -17,6 +17,7 @@ import numpy as np
 import pandas as pd
 import nltk
 from sklearn.svm import SVC
+import matplotlib.pyplot as plt
 
 from neuron.serializers import TrainTextSerializer
 
@@ -24,6 +25,7 @@ from neuron.models import TrainText
 
 from neuron.models import MlModels
 
+from mpl_toolkits import mplot3d
 
 def learnModelSVC():
     c, Labels = getTrainData()
@@ -89,6 +91,7 @@ def learnModelSVC():
     # print("---------Print result")
     # print(results)
 
+
     print("SVM Train")
     svm = SVC(probability=True)
     svm = SVC(kernel='linear', probability=True)
@@ -97,6 +100,8 @@ def learnModelSVC():
 
     pickle_data = pickle.dumps(svm)
     MlModels.objects.create(model=pickle_data)
+
+
 
     # print("----------------LABEl[1:10]")
 
@@ -200,6 +205,8 @@ print(myModel)
 
 if not myModel:
     svm, tv = learnModelSVC()
+
+
 
     print("Lent Model end")
 else:

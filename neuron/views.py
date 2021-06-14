@@ -44,7 +44,7 @@ def data_train(request, format=None):
         data = JSONParser().parse(request)
         serializer = TrainTextSerializer(data=data)
         if serializer.is_valid():
-            # serializer.save()
+            serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)
 
@@ -65,8 +65,15 @@ def snippet_list(request, format=None):
         data.update({"percent": neuron.isBulling(data["text"])})
         print(data["percent"])
         print(data)
+        if data["percent"]>=0.4:
+            data.update({"isBulling": True})
+        else:
+            data.update({"isBulling": False})
+
+
+
         serializer = CheckTextSerializer(data=data)
         if serializer.is_valid():
-            # serializer.save()
+            serializer.save()
             return JsonResponse(serializer.data, status=201)
         return JsonResponse(serializer.errors, status=400)

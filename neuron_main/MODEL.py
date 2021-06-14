@@ -18,6 +18,7 @@ import tweepy
 import numpy as np
 import pandas as pd
 import nltk
+import matplotlib.pyplot as plt
 from sklearn.svm import SVC
 
 
